@@ -5,14 +5,14 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  /* Updated: Define the sans stack with English first, then Chinese */
-  --font-sans: var(--font-fredoka), var(--font-noto-sans-tc), sans-serif;
-  
-  /* Optional: You can remove this if you aren't using Geist Mono anymore */
-  --font-mono: var(--font-geist-mono); 
+@layer theme {
+  :root {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    /* Updated: Define the sans stack with English first, then Chinese */
+    --font-sans: var(--font-fredoka), var(--font-noto-sans-tc);
+
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,5 +26,5 @@ body {
   background: var(--background);
   color: var(--foreground);
   /* Updated: Apply the new font stack defined in the theme */
-  font-family: var(--font-sans);
+  font-family: var(--font-fredoka), var(--font-noto-sans-tc);
 }

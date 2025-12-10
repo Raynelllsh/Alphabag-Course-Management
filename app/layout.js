@@ -1,14 +1,16 @@
-import { Geist, Geist_Mono } from "next/font/google";
+// app/layout.tsx or app/layout.js
+import { Fredoka, Noto_Sans_TC } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const fredoka = Fredoka({
+  subsets: ["latin"],          // for English/Latin text
+  variable: "--font-fredoka",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const notoSansTC = Noto_Sans_TC({
+  // Noto Sans TC is designed for Traditional Chinese. [web:21][web:12]
+  weight: ["400"],             // add more weights if you need them
+  variable: "--font-noto-sans-tc",
 });
 
 export const metadata = {
@@ -20,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${fredoka.variable} ${notoSansTC.variable} antialiased`}
       >
         {children}
       </body>
