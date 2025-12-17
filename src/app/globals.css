@@ -7,12 +7,10 @@
 
 @layer theme {
   :root {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    /* Updated: Define the sans stack with English first, then Chinese */
-    --font-sans: var(--font-fredoka), var(--font-noto-sans-tc);
-
-  }
+  --foreground-rgb: 0, 0, 0; /* Ensures text is black */
+  --background-start-rgb: 243, 244, 246; /* Gray-100 background */
+  --background-end-rgb: 255, 255, 255;
+}
 }
 
 @media (prefers-color-scheme: dark) {
